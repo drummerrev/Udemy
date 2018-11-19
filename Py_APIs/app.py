@@ -1,7 +1,7 @@
 ## Need to import the jsonify method from flask library for processing json content
 ## Also need to import request method
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 
 
@@ -18,6 +18,10 @@ stores = [
 		]
 	}
 ]
+
+@app.route('/')
+def home():
+	return render_template('index.html')
 
 # POST - used to receive data
 # GET - used to send data back only
